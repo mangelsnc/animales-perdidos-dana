@@ -15,6 +15,7 @@ define('FOTO', 6);
 define('ESTADO', 7);
 define('EN_CASA', 8);
 define('FALLECIDO', 9);
+define('RECHAZADO', 10);
 
 function transformarUrlImagen($url) {
   preg_match('/id=([^&]+)/', $url, $matches);
@@ -29,9 +30,7 @@ $data = [];
 if (($handle = fopen($csvFile, 'r')) !== false) {
   fgetcsv($handle, 1000, ',');
   while (($row = fgetcsv($handle, 1000, ',')) !== false) {
-    if (($row[EN_CASA] == 'FALSE' || $row[EN_CASA] == '') && ($row[FALLECIDO] == 'FALSE' || $row[FALLECIDO] == '')) {
       $data[] = $row;
-    }
   }
   fclose($handle);
 }
@@ -97,6 +96,9 @@ sort($ubicaciones);
         .active-filters { margin-top: 10px; font-style: italic; color: #333; }
         .badge { display: inline-block; padding: 5px 10px; font-size: 0.5em; font-weight: bold; border-radius: 12px; color: #fff; margin-left: 10px; float: right; }
         .badge-found { background-color: dodgerblue; }
+        .badge-dead { background-color: black; }
+        .badge-home { background-color: darkolivegreen; }
+        .badge-rejected { background-color: orange; }
         .badge-lost { background-color: crimson; }
         a { color: #ff3f3f; text-decoration: none }
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8); }
@@ -245,6 +247,9 @@ sort($ubicaciones);
             <option value="">Todos los estados</option>
             <option value="He encontrado/He trobat">Rescatado</option>
             <option value="Busco/Busque">Desaparecido</option>
+            <option value="En Casa">En casa</option>
+            <option value="Fallecido">Fallecido</option>
+            <option value="Rechazado">Rechazado por su familia</option>
         </select>
         <button class="btn" onclick="clearFilters()">🧹 Limpiar filtros</button>
     </div>
@@ -259,14 +264,42 @@ sort($ubicaciones);
         $nombre = htmlentities($item[NOMBRE] ?? '');
         $especie = htmlentities($item[ESPECIE] ?? '');
         $estado = htmlentities($item[ESTADO] ?? '');
+        $badgeText = ($estado === "He encontrado/He trobat") ? "🛟 Rescatado" : "🔍 Desaparecido";
+        $badgeClass = ($estado === "He encontrado/He trobat") ? "badge-found" : "badge-lost";
+
+        if ($item[FALLECIDO] == 'TRUE') {
+          $estado = 'Fallecido';
+          $badgeText = '💀 ' . $estado;
+          $badgeClass = 'badge-dead';
+        }
+
+        if ( $item[EN_CASA] == 'TRUE') {
+          $estado = 'En Casa';
+          $badgeText = '🎉 ' . $estado;
+          $badgeClass = 'badge-home';
+        }
+
+        if ( $item[RECHAZADO] == 'TRUE') {
+          $estado = 'Rechazado';
+          $badgeText = '😡 ' . $estado;
+          $badgeClass = 'badge-rejected';
+        }
+
         $hash = md5($nombre.$especie.$estado.$imgUrl);
         $anchor = 'card-' . $hash; // Anchor unique identifier for each card
 
-        $badgeText = ($estado === "He encontrado/He trobat") ? "Rescatado" : "Desaparecido";
-        $badgeClass = ($estado === "He encontrado/He trobat") ? "badge-found" : "badge-lost";
         $locationText = ($estado === "He encontrado/He trobat") ? "Encontrado en" : "Última vez visto en";
         ?>
-          <div class="card" id="<?php echo $anchor; ?>" data-location="<?php echo htmlentities($item[UBICACION] ?? ''); ?>" data-description="<?php echo htmlentities($item[DESCRIPCION] ?? ''); ?>" data-species="<?php echo $especie; ?>" data-status="<?php echo $estado; ?>" data-name="<?php echo $nombre; ?>">
+          <div class="card" id="<?php echo $anchor; ?>"
+               data-location="<?php echo htmlentities($item[UBICACION] ?? ''); ?>"
+               data-description="<?php echo htmlentities($item[DESCRIPCION] ?? ''); ?>"
+               data-species="<?php echo $especie; ?>"
+               data-status="<?php echo $estado; ?>"
+               data-name="<?php echo $nombre; ?>"
+               data-fallecido="<?php echo $estado == 'Fallecido' ? 1 : 0; ?>"
+               data-rechazado="<?php echo $estado == 'Rechazado' ? 1 : 0; ?>"
+               data-en-casa="<?php echo $estado == 'En Casa' ? 1 : 0; ?>"
+          >
               <div class="img-container">
                   <img src="<?php echo $imgUrl; ?>" alt="Foto de <?php echo htmlentities($item[NOMBRE] ?? ''); ?>" onclick="openModal('<?php echo $imgUrl; ?>')" style="cursor: pointer;">
                   <em>🔍 Click para ampliar</em>
