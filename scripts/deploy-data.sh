@@ -22,7 +22,7 @@ if [[ $? -ne 0 ]]; then
 fi
 
 # Cambiamos la propiedad del archivo en el servidor remoto
-ssh "$REMOTE_USER@$REMOTE_HOST" "chown www-data:www-data $REMOTE_PATH$FILE"
+ssh "$REMOTE_USER@$REMOTE_HOST" "chown www-data:www-data $REMOTE_PATH$(basename $FILE)"
 
 # Comprobamos si el cambio de propiedad fue exitoso
 if [[ $? -eq 0 ]]; then
