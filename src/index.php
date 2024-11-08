@@ -61,7 +61,7 @@ sort($ubicaciones);
     <meta name="twitter:image" content="https://gorogoro.es/wp-content/uploads/2020/08/gorocat.png">
 
 
-    <title>Plataforma de Búsqueda de Animales Perdidos durante la DANA de 2024</title>
+    <title>Plataforma de Búsqueda de Animales Perdidos durante la DANA de 2024 🐾</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f2f2f2; color: #333; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         h1 { color: #ff6f61; }
