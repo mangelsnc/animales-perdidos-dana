@@ -61,7 +61,7 @@ sort($ubicaciones);
     <meta name="twitter:image" content="https://gorogoro.es/wp-content/uploads/2020/08/gorocat.png">
 
 
-    <title>Plataforma de Búsqueda de Animales Perdidos durante la DANA de 2024 🐾</title>
+    <title>🐾 Plataforma de Búsqueda de Animales Perdidos durante la DANA de 2024</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f2f2f2; color: #333; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         h1 { color: #ff6f61; }
@@ -222,7 +222,7 @@ sort($ubicaciones);
 </head>
 <body>
 <div class="container">
-    <h1>Plataforma de Búsqueda de Animales Perdidos Durante la DANA de 2024</h1>
+    <h1>🐾 Plataforma de Búsqueda de Animales Perdidos Durante la DANA de 2024</h1>
     <p>Si has rescatado un animal perdido o estás buscando un animal desaparecido durante la DANA, haz click aquí:</p>
     <p style="text-align: center;"><a class="share-btn" target="_blank" href="https://forms.gle/V2ncxjUDJ2Vdwxzg7">📝 NOTIFICAR ANIMALES PERDIDOS O ENCONTRADOS</a></p>
     <p><strong>Debido a la validación manual que hacemos de los formularios, el proceso de alta no es inmediato.</strong> Si tienes alguna duda <a target="_blank" href="mailto:gorogoro.purr.roll@gmail.com">contacta con nosotros</a>.</p>
