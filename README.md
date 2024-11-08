@@ -1,4 +1,4 @@
-# Plataforma de Animales Perdidos en la DANA 2024 🐾
+# 🐾 Plataforma de Animales Perdidos en la DANA 2024 
 
 Este proyecto surge como respuesta a la DANA de 2024 en la provincia de Valencia, proporcionando una plataforma solidaria para ayudar a encontrar y reunir animales perdidos o encontrados durante el evento meteorológico. La plataforma permite publicar, buscar y compartir fichas de animales, facilitando su localización y el reencuentro con sus familias.
 
