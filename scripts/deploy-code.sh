@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="../src/index.php"
+FILE="src/index.php"
 REMOTE_FILE="dana.php"
 REMOTE_USER="root"
 REMOTE_HOST="gorogoro.es"

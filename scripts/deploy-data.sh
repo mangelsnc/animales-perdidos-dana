@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE="../src/data.csv"
+FILE="src/data.csv"
 REMOTE_USER="root"
 REMOTE_HOST="gorogoro.es"
 REMOTE_PATH="/var/www/html/"
