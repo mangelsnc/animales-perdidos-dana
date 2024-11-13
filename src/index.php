@@ -72,7 +72,6 @@ sort($ubicaciones);
         .cards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         .card { display: flex; flex-direction: row; align-items: center; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); padding: 20px; max-width: 600px; width: 100%; transition: transform 0.3s; overflow: hidden; position: relative; }
         .card:hover { transform: translateY(-5px); }
-        .card.highlighted { border: 4px solid #ff6f61; box-shadow: 0 0 10px #ff6f61; background-color: rgba(255, 111, 97, 0.1);}
         .card.hidden{ display: none; }
         .card img { width: 200px; height: 200px; object-fit: cover; border-radius: 8px; margin-right: 20px; }
         .card-content { flex: 1; width: 100% }
@@ -114,7 +113,6 @@ sort($ubicaciones);
                 const targetCard = document.querySelector(anchor);
 
                 if (targetCard) {
-                    targetCard.classList.add("highlighted");
                     targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
                     document.querySelectorAll(".card").forEach((card) => {
                         if (card !== targetCard) {
@@ -181,6 +179,8 @@ sort($ubicaciones);
             document.getElementById('noResults').style.display = totalCards === 0 ? 'block' : 'none';
         }
         function clearFilters() {
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
             document.getElementById('activeFilters').textContent = '';
             document.getElementById('search').value = '';
             document.getElementById('species').value = '';
