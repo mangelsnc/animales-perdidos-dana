@@ -330,8 +330,9 @@ sort($ubicaciones);
     </div>
 
     <div class="footer">
-        <p>Hecho con ❤️ por <strong><a href="https://gorogoro.es">gorogoro: purr & roll</a></strong> con la colaboración de <strong><a target="_blank" href="https://instagram.com/perros_desaparecido_riada_2024">@perros_desaparecido_riada_2024</a></strong></p>
+        <p>Hecho con ❤️ por <strong><a href="https://gorogoro.es">gorogoro: purr & roll</a></strong></p> 
         <p>Contacto: <a target="_blank" href="mailto:gorogoro.purr.roll@gmail.com">Email</a> | <a target="_blank" href="https://instagram.com/gorogoro.purr.roll">Instagram</a></p>
+        <p>Casos centralizados de <strong><a target="_blank" href="https://instagram.com/perros_desaparecido_riada_2024">@perros_desaparecido_riada_2024</a></strong>, <strong><a target="_blank" href="https://www.instagram.com/animales_dana_valencia">@animales_dana_valencia</a></strong> y <strong><a target="_blank" href="https://www.instagram.com/animalesafectadosporladana">@animalesafectadosporladana</a></strong></p>
     </div>
 </div>
 </body>
