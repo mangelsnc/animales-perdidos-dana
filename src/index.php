@@ -249,7 +249,7 @@ sort($ubicaciones);
             <option value="Busco/Busque">Desaparecido</option>
             <option value="En Casa">En casa</option>
             <option value="Fallecido">Fallecido</option>
-            <option value="Rechazado">Rechazado por su familia</option>
+            <option value="Rechazado">Busca nueva familia</option>
         </select>
         <button class="btn" onclick="clearFilters()">🧹 Limpiar filtros</button>
     </div>
@@ -281,7 +281,7 @@ sort($ubicaciones);
 
         if ( $item[RECHAZADO] == 'TRUE') {
           $estado = 'Rechazado';
-          $badgeText = '😡 ' . $estado;
+          $badgeText = '☀️  Busca nueva familia ';
           $badgeClass = 'badge-rejected';
         }
 
