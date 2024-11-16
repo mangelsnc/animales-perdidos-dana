@@ -12,6 +12,7 @@ if [[ ! -f $FILE ]]; then
 fi
 
 scp "$FILE" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/$REMOTE_FILE"
+scp -r src/stats-img "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
 
 if [[ $? -ne 0 ]]; then
     echo "Error: Fallo en la transferencia del archivo."
@@ -19,6 +20,7 @@ if [[ $? -ne 0 ]]; then
 fi
 
 ssh "$REMOTE_USER@$REMOTE_HOST" "chown www-data:www-data $REMOTE_PATH$REMOTE_FILE"
+ssh "$REMOTE_USER@$REMOTE_HOST" "chown -R www-data:www-data $REMOTE_PATH/stats-img"
 
 if [[ $? -eq 0 ]]; then
     echo "El archivo $FILE se ha subido y la propiedad se ha cambiado exitosamente."

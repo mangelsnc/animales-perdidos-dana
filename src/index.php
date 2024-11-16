@@ -84,6 +84,12 @@ sort($ubicaciones);
         .share-btn { display: inline-block; padding: 10px 15px; margin-top: 10px; background-color: #ff6f61; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background-color 0.3s; }
         .share-btn:hover { background-color: #ff3f3f; }
         .footer { margin-top: 20px; font-size: 0.9em; color: #666; text-align: center }
+        .stats { background-color: #FCE3E1; padding: 15px; border-bottom: 3px solid #ff6f61; }
+        .stats img { display: block; object-fit: cover; margin: 10px auto; border: 1px solid #ff6f61; }
+        .stats { flex: 1; width: 100% }
+        .stats h3 { font-size: 1.5em; color: #333; margin: 25px 0 0; }
+        .stats summary { font-size: 1em; color: #333; font-weight: bold; cursor: pointer }
+        .stats p { margin: 10px 0; }
         @media (max-width: 768px) {
             .card { flex-direction: column; align-items: flex-start; }
             .card img { width: 100%; height: auto; margin: 0 0 5px; }
@@ -91,6 +97,8 @@ sort($ubicaciones);
             .search-box { flex-direction: column; }
             .search-box select { width: 100%; }
             .img-container em { text-align: center; }
+            .stats img { display: block; height: 200px; object-fit: cover; margin: 20px auto; }
+            .stats { background-color: #FCE3E1; padding: 5px; }
         }
         .active-filters { margin-top: 10px; font-style: italic; color: #333; }
         .badge { display: inline-block; padding: 5px 10px; font-size: 0.5em; font-weight: bold; border-radius: 12px; color: #fff; margin-left: 10px; float: right; }
@@ -226,6 +234,49 @@ sort($ubicaciones);
     <p>Si has rescatado un animal perdido o estás buscando un animal desaparecido durante la DANA, haz click aquí:</p>
     <p style="text-align: center;"><a class="share-btn" target="_blank" href="https://forms.gle/V2ncxjUDJ2Vdwxzg7">📝 NOTIFICAR ANIMALES PERDIDOS O ENCONTRADOS</a></p>
     <p><strong>Debido a la validación manual que hacemos de los formularios, el proceso de alta no es inmediato.</strong> Si tienes alguna duda <a target="_blank" href="mailto:gorogoro.purr.roll@gmail.com">contacta con nosotros</a>.</p>
+    <details class="stats">
+        <summary>📊 Análisis y estadísticas de animales afectados por la DANA</summary>
+        <p>Hemos preparado un análisis de los animales afectados por la DANA a partir de los casos dados de alta en la Plataforma de Búsqueda de Animales Perdidos durante la DANA de 2024 gorogoro.es/dana. No somos conscientes de que se hayan publicado cifras oficiales por parte de organismos públicos, de ahí que hayamos preparado este análisis.</p>
+        <p>A día de la publicación de este estudio, contamos con más de 320 casos centralizados en la plataforma. Las fuentes de información utilizadas son los casos dados de alta por los usuarios en la plataforma así como los casos recopilados de <a href="https://instagram.com/perros_desaparecido_riada_2024" target="_blank">@perros_desaparecido_riada_2024</a>, <a href="https://www.instagram.com/animales_dana_valencia" target="_blank">@animales_dana_valencia</a> y <a href="https://www.instagram.com/animalesafectadosporladana" target="_blank">@animalesafectadosporladana</a>. Nos hemos encargado de revisar y actualizar cada caso en la web para asegurar la fiabilidad de los datos.</p>
+        <p>Esta es una de las ventajas de unificar los animales perdidos y encontrados en una base de datos: cuando contamos con un número significativo de registros, podemos realizar estudios o sacar estadísticas para ver una muestra de la magnitud y el impacto que ha tenido la DANA sobre los animales domésticos de los municipios afectados.</p>
+
+        <h3>Recuento por especie</h3>
+        <img src="stats-img/especie.png" style="text-align: center" />
+        <p>La especie que más se ha dado de alta ha sido el perro (266), seguida de muy lejos por el gato (46) y algunos casos de aves, caballos y reptiles.</p>
+
+        <h3>Recuento por ubicación</h3>
+        <img src="stats-img/ubicacion.png" style="text-align: center" />
+        <p>Los municipios de origen o de donde han sido encontrados más animales son:</p>
+        <ul>
+            <li>Torrent</li>
+            <li>Valencia</li>
+            <li>Paiporta</li>
+            <li>Catarroja</li>
+            <li>Chiva</li>
+        </ul>
+        <p>Estas poblaciones coinciden con las más afectadas por el temporal. Es una lástima que el porcentaje más grande sea “Sin especificar”, de ahí la importancia de siempre indicar el municipio de dónde viene el animal o dónde se ha encontrado, sobretodo para facilitar su encuentro.</p>
+
+        <h3>Recuento por estado</h3>
+        <img src="stats-img/estado.png" style="text-align: center" />
+        <p>Se han dado de alta, aproximadamente, el mismo porcentaje de animales encontrados que perdidos.</p>
+
+        <h3>Recuento de animales en casa</h3>
+        <img src="stats-img/en-casa.png" style="text-align: center" />
+        <p>Aproximadamente, la mitad de los animales dados de alta han vuelto a casa con sus familias 🤗</p>
+
+        <h3>Recuento de animales fallecidos</h3>
+        <img src="stats-img/fallecidos.png" style="text-align: center" />
+        <p>Alrededor de un 14% de los animales dados de alta han sido encontrados fallecidos.</p>
+
+        <h3>Recuento de animales que buscan nueva familia</h3>
+        <img src="stats-img/buscan-familia.png" style="text-align: center" />
+        <p>Tan solo un 2,3% de los animales dados de alta han necesitado buscar un nuevo hogar. Ya sea porque sus familias afectadas por la DANA y habiéndolo perdido todo, no podían hacerse cargo o bien porque hayan sido rechazados.</p>
+
+        <h3>Conclusiones</h3>
+        <p>Podemos concluir que por suerte, un alto porcentaje de animales ha sido encontrado y ha podido volver con sus familias. El porcentaje de víctimas ha sido menor del que todos imaginábamos, teniendo en cuenta, la magnitud de esta tragedia.</p>
+        <p>Nos gustaría recordar la importancia del chip, en la mayoría de casos, sobretodo en gatos, los animales no llevaban chip de identificación, obligatorio por ley. El chip agiliza la búsqueda y el reencuentro del animal con su familia si los datos están actualizados.</p>
+        <p>Desde aquí agradecer de nuevo a todas las personas que usáis nuestra plataforma y a l@s voluntari@s que nos ayudáis a mantener los casos al día. Esperamos que más tarde o más temprano, todos los animales afectados se reúnan con sus familias 🖤</p>
+    </details>
     <p>Ayudemos a reunir a las animales perdidos con sus familias!</p>
 
     <!-- Buscador -->
