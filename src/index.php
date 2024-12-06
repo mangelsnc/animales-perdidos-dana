@@ -237,12 +237,12 @@ sort($ubicaciones);
     <details class="stats">
         <summary>📊 Análisis y estadísticas de animales afectados por la DANA</summary>
         <p>Hemos preparado un análisis de los animales afectados por la DANA a partir de los casos dados de alta en la Plataforma de Búsqueda de Animales Perdidos durante la DANA de 2024 gorogoro.es/dana. No somos conscientes de que se hayan publicado cifras oficiales por parte de organismos públicos, de ahí que hayamos preparado este análisis.</p>
-        <p>A día de la publicación de este estudio, contamos con más de 320 casos centralizados en la plataforma. Las fuentes de información utilizadas son los casos dados de alta por los usuarios en la plataforma así como los casos recopilados de <a href="https://instagram.com/perros_desaparecido_riada_2024" target="_blank">@perros_desaparecido_riada_2024</a>, <a href="https://www.instagram.com/animales_dana_valencia" target="_blank">@animales_dana_valencia</a> y <a href="https://www.instagram.com/animalesafectadosporladana" target="_blank">@animalesafectadosporladana</a>. Nos hemos encargado de revisar y actualizar cada caso en la web para asegurar la fiabilidad de los datos.</p>
+        <p>A día de la publicación de este estudio, contamos con más de 440 casos centralizados en la plataforma. Las fuentes de información utilizadas son los casos dados de alta por los usuarios en la plataforma así como los casos recopilados de <a href="https://instagram.com/perros_desaparecido_riada_2024" target="_blank">@perros_desaparecido_riada_2024</a>, <a href="https://www.instagram.com/animales_dana_valencia" target="_blank">@animales_dana_valencia</a> y <a href="https://www.instagram.com/animalesafectadosporladana" target="_blank">@animalesafectadosporladana</a>. Nos hemos encargado de revisar y actualizar cada caso en la web para asegurar la fiabilidad de los datos.</p>
         <p>Esta es una de las ventajas de unificar los animales perdidos y encontrados en una base de datos: cuando contamos con un número significativo de registros, podemos realizar estudios o sacar estadísticas para ver una muestra de la magnitud y el impacto que ha tenido la DANA sobre los animales domésticos de los municipios afectados.</p>
 
         <h3>Recuento por especie</h3>
         <img src="stats-img/especie.png" style="text-align: center" />
-        <p>La especie que más se ha dado de alta ha sido el perro (266), seguida de muy lejos por el gato (46) y algunos casos de aves, caballos y reptiles.</p>
+        <p>La especie que más se ha dado de alta ha sido el perro, seguida de muy lejos por el gato y algunos casos de aves, caballos y reptiles.</p>
 
         <h3>Recuento por ubicación</h3>
         <img src="stats-img/ubicacion.png" style="text-align: center" />
@@ -258,19 +258,19 @@ sort($ubicaciones);
 
         <h3>Recuento por estado</h3>
         <img src="stats-img/estado.png" style="text-align: center" />
-        <p>Se han dado de alta, aproximadamente, el mismo porcentaje de animales encontrados que perdidos.</p>
+        <p>Poco a poco, se incrementan los casos de animales encontrados dados de alta respecto a animales perdidos.</p>
 
         <h3>Recuento de animales en casa</h3>
         <img src="stats-img/en-casa.png" style="text-align: center" />
-        <p>Aproximadamente, la mitad de los animales dados de alta han vuelto a casa con sus familias 🤗</p>
+        <p>Más de la mitad de los animales dados de alta han vuelto a casa con sus familias o han encontrado un nuevo hogar 🤗</p>
 
         <h3>Recuento de animales fallecidos</h3>
         <img src="stats-img/fallecidos.png" style="text-align: center" />
-        <p>Alrededor de un 14% de los animales dados de alta han sido encontrados fallecidos.</p>
+        <p>El 20% de los animales dados de alta han sido encontrados fallecidos.</p>
 
         <h3>Recuento de animales que buscan nueva familia</h3>
         <img src="stats-img/buscan-familia.png" style="text-align: center" />
-        <p>Tan solo un 2,3% de los animales dados de alta han necesitado buscar un nuevo hogar. Ya sea porque sus familias afectadas por la DANA y habiéndolo perdido todo, no podían hacerse cargo o bien porque hayan sido rechazados.</p>
+        <p>Casi un 11% de los animales dados de alta ha necesitado buscar un nuevo hogar. Ya sea porque sus familias afectadas por la DANA y habiéndolo perdido todo, no podían hacerse cargo o bien porque hayan sido rechazados.</p>
 
         <h3>Conclusiones</h3>
         <p>Podemos concluir que por suerte, un alto porcentaje de animales ha sido encontrado y ha podido volver con sus familias. El porcentaje de víctimas ha sido menor del que todos imaginábamos, teniendo en cuenta, la magnitud de esta tragedia.</p>
@@ -324,16 +324,16 @@ sort($ubicaciones);
           $badgeClass = 'badge-dead';
         }
 
-        if ( $item[EN_CASA] == 'TRUE') {
-          $estado = 'En Casa';
-          $badgeText = '🎉 ' . $estado;
-          $badgeClass = 'badge-home';
-        }
-
         if ( $item[RECHAZADO] == 'TRUE') {
           $estado = 'Rechazado';
           $badgeText = '☀️  Busca nueva familia ';
           $badgeClass = 'badge-rejected';
+        }
+
+        if ( $item[EN_CASA] == 'TRUE') {
+          $estado = 'En Casa';
+          $badgeText = '🎉 ' . $estado;
+          $badgeClass = 'badge-home';
         }
 
         $hash = md5($nombre.$especie.$estado.$imgUrl);
