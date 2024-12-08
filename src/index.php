@@ -244,6 +244,7 @@ sort($ubicaciones);
     <p>Si has rescatado un animal perdido o estás buscando un animal desaparecido durante la DANA, haz click aquí:</p>
     <p style="text-align: center;"><a class="share-btn" target="_blank" href="https://forms.gle/V2ncxjUDJ2Vdwxzg7">📝 NOTIFICAR ANIMALES PERDIDOS O ENCONTRADOS</a></p>
     <p><strong>Debido a la validación manual que hacemos de los formularios, el proceso de alta no es inmediato.</strong> Si tienes alguna duda <a target="_blank" href="mailto:gorogoro.purr.roll@gmail.com">contacta con nosotros</a>.</p>
+    <p>🫶 <strong>Buscamos voluntarias:</strong> Súmate a nuestra pequeña red de voluntariado para ayudarnos a mantener actualizado el estado de los animales. Si puedes dedicarnos un ratito de tu tiempo líbre, <a href="mailto:gorogoro.purr.roll@gmail.com">contacta con nosotros</a>.</p>
     <details class="stats">
         <summary>📊 Análisis y estadísticas de animales afectados por la DANA</summary>
         <p>Hemos preparado un análisis de los animales afectados por la DANA a partir de los casos dados de alta en la Plataforma de Búsqueda de Animales Perdidos durante la DANA de 2024 gorogoro.es/dana. No somos conscientes de que se hayan publicado cifras oficiales por parte de organismos públicos, de ahí que hayamos preparado este análisis.</p>
