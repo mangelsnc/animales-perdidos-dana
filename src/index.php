@@ -1,4 +1,12 @@
 <?php
+
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+$ip = $_SERVER['REMOTE_ADDR'];
+$referer = $_SERVER['HTTP_REFERER'] ?? 'Direct Traffic';
+
+$logLine = sprintf("[%s] %s - %s - FROM: %s\n", date('Y-m-d H:i:s'), $ip, $userAgent, $referer);
+file_put_contents('dana-log.txt', $logLine, FILE_APPEND);
+
 $ttl = 3600;
 $ts = gmdate("D, d M Y H:i:s", time() + $ttl) . " GMT";
 header("Expires: $ts");
