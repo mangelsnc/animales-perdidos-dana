@@ -3,7 +3,7 @@
 $userAgent = $_SERVER['HTTP_USER_AGENT'];
 $ip = $_SERVER['REMOTE_ADDR'];
 $referer = $_SERVER['HTTP_REFERER'] ?? 'Direct Traffic';
-$path = $SERVER['REQUEST_URI'] ?? '/';
+$path = $_SERVER['REQUEST_URI'] ?? '/';
 $queryString = '?' . $_SERVER['QUERY_STRING'] ?? '';
 
 $logLine = sprintf("[%s] %s%s - %s - %s - FROM: %s\n", date('Y-m-d H:i:s'), $path, $queryString, $ip, $userAgent, $referer);
