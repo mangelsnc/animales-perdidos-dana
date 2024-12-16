@@ -384,7 +384,17 @@ sort($ubicaciones);
                   <p class="info"><strong>Fecha:</strong> <?php echo htmlentities($item[FECHA] ?? ''); ?></p>
                   <p class="info"><strong>Especie:</strong> <?php echo $especie; ?></p>
                   <p class="info"><strong><?php echo $locationText; ?>:</strong> <?php echo htmlentities($item[UBICACION] ?? ''); ?></p>
-                  <p class="description"><strong>Descripción:</strong> <?php echo htmlentities($item[DESCRIPCION] ?? ''); ?></p>
+                  <p class="description"><strong>Descripción:</strong>
+                    <?php
+                    $descripcion = strip_tags($item[DESCRIPCION]) ?? '';
+                    $descripcion_con_enlaces = preg_replace(
+                      '/(https?:\/\/[^\s]+)/i',
+                      '<a href="$1" target="_blank">$1</a>',
+                      $descripcion
+                    );
+                    echo $descripcion_con_enlaces;
+                    ?>
+                  </p>
                   <p class="contact">📞 <a href="tel:<?php echo htmlentities($item[TELEFONO] ?? ''); ?>"><?php echo htmlentities($item[TELEFONO] ?? ''); ?></a></p>
                   <a href="javascript:void(0);" class="share-btn" onclick="shareCard('<?php echo $anchor; ?>')">🔗 Compartir</a>
               </div>
