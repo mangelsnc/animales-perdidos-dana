@@ -26,6 +26,7 @@ define('ESTADO', 7);
 define('EN_CASA', 8);
 define('FALLECIDO', 9);
 define('RECHAZADO', 10);
+define('AVISTADO', 11);
 
 function transformarUrlImagen($url) {
   preg_match('/id=([^&]+)/', $url, $matches);
@@ -87,7 +88,8 @@ sort($ubicaciones);
         .card-content { flex: 1; width: 100% }
         .card-content h3 { font-size: 1.5em; color: #333; margin: 10px 0; }
         .card-content p { color: #555; margin: 5px 0; }
-        .info, .contact { margin: 5px 0; }
+        .info, .contact { margin: 5px 0; overflow-wrap: anywhere }
+        .description { overflow-wrap: anywhere }
         .contact a { font-weight: bold; color: #ff6f61; font-size: 1.2em; text-decoration: none; }
         .contact a:hover { text-decoration: underline; }
         .btn { display: inline-block; font-size: 1em; padding: 15px 15px; background-color: #ff6f61; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background-color 0.3s; border: 0}
@@ -117,6 +119,7 @@ sort($ubicaciones);
         .badge-home { background-color: darkolivegreen; }
         .badge-rejected { background-color: orange; }
         .badge-lost { background-color: crimson; }
+        .badge-viewed { background-color: mediumpurple; }
         a { color: #ff3f3f; text-decoration: none }
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8); }
         .modal-content { margin: auto; display: block; width: 100%; height: 100%; object-fit: contain; }
@@ -312,6 +315,7 @@ sort($ubicaciones);
             <option value="En Casa">En casa</option>
             <option value="Fallecido">Fallecido</option>
             <option value="Rechazado">Busca nueva familia</option>
+            <option value="Visto">Visto</option>
         </select>
         <button class="btn" onclick="clearFilters()">🧹 Limpiar filtros</button>
     </div>
@@ -335,7 +339,7 @@ sort($ubicaciones);
           $badgeClass = 'badge-dead';
         }
 
-        if ( $item[RECHAZADO] == 'TRUE') {
+        if ($item[RECHAZADO] == 'TRUE') {
           $estado = 'Rechazado';
           $badgeText = '☀️  Busca nueva familia ';
           $badgeClass = 'badge-rejected';
@@ -345,6 +349,12 @@ sort($ubicaciones);
           $estado = 'En Casa';
           $badgeText = '🎉 ' . $estado;
           $badgeClass = 'badge-home';
+        }
+
+        if ($item[AVISTADO] == 'TRUE') {
+          $estado = 'Visto';
+          $badgeText = '👀 ' . $estado;
+          $badgeClass = 'badge-viewed';
         }
 
         $hash = md5($nombre.$especie.$estado.$imgUrl);
@@ -374,7 +384,7 @@ sort($ubicaciones);
                   <p class="info"><strong>Fecha:</strong> <?php echo htmlentities($item[FECHA] ?? ''); ?></p>
                   <p class="info"><strong>Especie:</strong> <?php echo $especie; ?></p>
                   <p class="info"><strong><?php echo $locationText; ?>:</strong> <?php echo htmlentities($item[UBICACION] ?? ''); ?></p>
-                  <p><strong>Descripción:</strong> <?php echo htmlentities($item[DESCRIPCION] ?? ''); ?></p>
+                  <p class="description"><strong>Descripción:</strong> <?php echo htmlentities($item[DESCRIPCION] ?? ''); ?></p>
                   <p class="contact">📞 <a href="tel:<?php echo htmlentities($item[TELEFONO] ?? ''); ?>"><?php echo htmlentities($item[TELEFONO] ?? ''); ?></a></p>
                   <a href="javascript:void(0);" class="share-btn" onclick="shareCard('<?php echo $anchor; ?>')">🔗 Compartir</a>
               </div>
