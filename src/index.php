@@ -270,24 +270,20 @@ sort($ubicaciones);
         </ul>
         <p>Estas poblaciones coinciden con las más afectadas por el temporal. Es una lástima que el porcentaje más grande sea “Sin especificar”, de ahí la importancia de siempre indicar el municipio de dónde viene el animal o dónde se ha encontrado, sobretodo para facilitar su encuentro.</p>
 
-        <h3>Recuento por estado</h3>
-        <img src="stats-img/estado.png" style="text-align: center" />
-        <p>Poco a poco, se incrementan los casos de animales encontrados dados de alta respecto a animales perdidos.</p>
-
         <h3>Recuento de animales en casa</h3>
         <img src="stats-img/en-casa.png" style="text-align: center" />
-        <p>Más de la mitad de los animales dados de alta han vuelto a casa con sus familias o han encontrado un nuevo hogar 🤗</p>
+        <p>Cerca del 30% de los animales dados de alta han vuelto a casa con sus familias o han encontrado un nuevo hogar 🤗</p>
 
         <h3>Recuento de animales fallecidos</h3>
         <img src="stats-img/fallecidos.png" style="text-align: center" />
-        <p>El 20% de los animales dados de alta han sido encontrados fallecidos.</p>
+        <p>El 6% de los animales dados de alta han sido encontrados fallecidos.</p>
 
         <h3>Recuento de animales que buscan nueva familia</h3>
         <img src="stats-img/buscan-familia.png" style="text-align: center" />
-        <p>Casi un 11% de los animales dados de alta ha necesitado buscar un nuevo hogar. Ya sea porque sus familias afectadas por la DANA y habiéndolo perdido todo, no podían hacerse cargo o bien porque hayan sido rechazados.</p>
+        <p>Un 7% de los animales dados de alta han necesitado buscar un nuevo hogar. Ya sea porque sus familias afectadas por la DANA y habiéndolo perdido todo, no podían hacerse cargo o bien porque hayan sido rechazados.</p>
 
         <h3>Conclusiones</h3>
-        <p>Podemos concluir que por suerte, un alto porcentaje de animales ha sido encontrado y ha podido volver con sus familias. El porcentaje de víctimas ha sido menor del que todos imaginábamos, teniendo en cuenta, la magnitud de esta tragedia.</p>
+        <p>Podemos concluir que un porcentaje medio de animales ha sido encontrado y ha podido volver con sus familias o encontrar un nuevo hogar. El porcentaje de víctimas ha sido menor del que todos imaginábamos, teniendo en cuenta, la magnitud de esta tragedia.</p>
         <p>Nos gustaría recordar la importancia del chip, en la mayoría de casos, sobretodo en gatos, los animales no llevaban chip de identificación, obligatorio por ley. El chip agiliza la búsqueda y el reencuentro del animal con su familia si los datos están actualizados.</p>
         <p>Desde aquí agradecer de nuevo a todas las personas que usáis nuestra plataforma y a l@s voluntari@s que nos ayudáis a mantener los casos al día. Esperamos que más tarde o más temprano, todos los animales afectados se reúnan con sus familias 🖤</p>
     </details>
